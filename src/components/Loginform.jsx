@@ -13,6 +13,9 @@ const Loginform = () => {
     try {
       const response = await loginUser({ email, password });
       if (response.success) {
+        if (response.data?.accessToken) {
+          localStorage.setItem("accessToken", response.data.accessToken);
+        }
         navigate("/create-url");
       }
     } catch (error) {
@@ -26,7 +29,7 @@ const Loginform = () => {
         <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">
           Login
         </h1>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
@@ -45,7 +48,7 @@ const Loginform = () => {
               required
             />
           </div>
-          
+
           <div>
             <label
               htmlFor="password"
@@ -65,9 +68,7 @@ const Loginform = () => {
           </div>
 
           {error && (
-            <div className="text-red-500 text-center text-sm">
-              {error}
-            </div>
+            <div className="text-red-500 text-center text-sm">{error}</div>
           )}
 
           <button
@@ -94,4 +95,4 @@ const Loginform = () => {
   );
 };
 
-export default Loginform; 
+export default Loginform;
