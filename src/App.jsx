@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<Registerform />} />
         <Route
-          path="/"
+          path="/dashboard"
           element={
             // <PrivateRoute>
               <Dashboardpage />
