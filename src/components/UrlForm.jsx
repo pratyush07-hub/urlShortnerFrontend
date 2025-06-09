@@ -25,7 +25,7 @@ const UrlForm = () => {
       if (error.response && error.response.status === 400) {
         alert("Custom URL already exists."); // show "Custom URL already exists."
       } else {
-        alert("Something went wrong. Please try again.");
+        alert("Custom URL already exists.");
       }
     }
   };
