@@ -14,7 +14,7 @@ const Loginform = () => {
       const response = await loginUser({ email, password });
       if (response.success) {
         if (response.data?.accessToken) {
-          console.log("Access Token:", response.data.accessToken);
+          // console.log("Access Token:", response.data.accessToken);
           localStorage.setItem("accessToken", response.data.accessToken);
         }
         navigate("/create-url");
