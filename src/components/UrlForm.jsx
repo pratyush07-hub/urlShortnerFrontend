@@ -23,7 +23,7 @@ const UrlForm = () => {
       setShortUrl(data); // success
     } catch (error) {
       if (error.response && error.response.status === 400) {
-        alert(error.response.data.message); // show "Custom URL already exists."
+        alert("Custom URL already exists."); // show "Custom URL already exists."
       } else {
         alert("Something went wrong. Please try again.");
       }
